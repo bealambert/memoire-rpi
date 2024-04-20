@@ -4,10 +4,13 @@ from gpiozero import MotionSensor
 # documentation: https://gpiozero.readthedocs.io/en/stable/api_input.html
 from datetime import datetime
 import client
+import RPi.GPIO as GPIO
 
 port = "1114"
 
-pir = MotionSensor(15)
+GPIO.setwarnings(False)
+
+pir = MotionSensor(23)
 
 while True:
     print("Listen...")
