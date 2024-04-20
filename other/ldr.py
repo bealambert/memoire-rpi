@@ -1,12 +1,15 @@
+# file to read data from LDR sensor (Light Dependent Resistor)
 # source: https://www.freva.com/fr/capteur-de-lumiere-photoresistance-avec-raspberry-pi/
 
 import RPi.GPIO as GPIO
 import time
 
+
 GPIO.setmode(GPIO.BCM) # define number of pins mode
 GPIO.setwarnings(False) # to avoid warning messages
 
-LIGHT_PIN = 23 # 8 pin on the first row
+# LIGHT_PIN = 23 # 8 pin on the first row
+LIGHT_PIN = 14
 
 GPIO.setup(LIGHT_PIN, GPIO.IN) # set up the pin as an input one
 lOld = not GPIO.input(LIGHT_PIN) # save last state of the sensor (used for comparison)

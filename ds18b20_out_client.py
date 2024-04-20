@@ -1,6 +1,6 @@
 import client
 
-port = "1112"
+port = "1113"
 
 # source: https://github.com/israel-dryer/Raspberry-Pi-Sensors/blob/master/ds18b20_single.py
 import os
@@ -38,6 +38,6 @@ def read_temp():
 while True:
     c = read_temp()
     print('C={:,.3f}'.format(c))
-    client.send_msg(str(c), port)
+    # client.send_msg(str(c), port)
     time.sleep(1)
 
