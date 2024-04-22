@@ -37,7 +37,7 @@ def read_temp():
 
 while True:
     c = read_temp()
-    print('C={:,.3f}'.format(c))
-    # client.send_msg(str(c), port)
+    print('DS18B20_out: C={:,.3f}'.format(c))
+    client.send_msg(str(c), port)
     time.sleep(1)
 

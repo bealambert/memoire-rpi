@@ -11,9 +11,9 @@ port = "1115"
 pir = MotionSensor(15)
 
 while True:
-    print("Listen...")
+    print("PIR_out: Listen...")
     pir.wait_for_motion()
     t = datetime.timestamp(datetime.now())
-    print(f"You moved at:{str(t)}")
+    print(f"PIR_out: You moved at:{str(t)}")
     # time.sleep(1)
-    # client.send_msg(str(t), port)
+    client.send_msg(str(t), port)

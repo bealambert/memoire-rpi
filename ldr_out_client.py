@@ -11,19 +11,15 @@ LIGHT_PIN = 14 # pin number 4 of the first row
 port = "1111"
 
 GPIO.setup(LIGHT_PIN, GPIO.IN) # set up the pin as an input one
-lOld = not GPIO.input(LIGHT_PIN) # save last state of the sensor (used for comparison)
+# lOld = not GPIO.input(LIGHT_PIN) # save last state of the sensor (used for comparison)
 print('Starting up the LIGHT Module (click on STOP to exit)')
 
 time.sleep(0.5) # wait for sensor stabilisation
 
 while True:
-  if GPIO.input(LIGHT_PIN) != lOld:
-    if GPIO.input(LIGHT_PIN):
-      print ('\u263e - dark')
-      # client.send_msg(0, port)
-    else:
-      print ('\u263c - light') 
-      # client.send_msg(1, port)
-  lOld = GPIO.input(LIGHT_PIN)
+  # source: https://www.uugear.com/portfolio/using-light-sensor-module-with-raspberry-pi/
+  sensor_value = GPIO.input(LIGHT_PIN)
+  print ("LDR_out: " + str(sensor_value) )# 0: light
+  client.send_msg(str(sensor_value), port)
   time.sleep(0.2)
 

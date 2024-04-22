@@ -2,7 +2,7 @@
 # import asyncio
 from websockets.sync.client import connect
 
-server_ip = "192.168.0.175"
+server_ip = "192.168.196.106"
 
 def send_msg(data, port):
     with connect(f"ws://{server_ip}:{port}") as websocket: # works with channel of fbcop ✨

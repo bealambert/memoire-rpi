@@ -13,8 +13,8 @@ GPIO.setwarnings(False)
 pir = MotionSensor(23)
 
 while True:
-    print("Listen...")
+    print("PIR_in: Listen...")
     pir.wait_for_motion()
     t = datetime.timestamp(datetime.now())
-    print(f"You moved at:{str(t)}")
+    print(f"PIR_in: You moved at:{str(t)}")
     # client.send_msg(str(t), port)
